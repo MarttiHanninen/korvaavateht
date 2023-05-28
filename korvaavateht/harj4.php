@@ -11,8 +11,8 @@ mysqli_begin_transaction($yhteys);
 
 try {
 
-  $sql1 = "INSERT INTO taulu1 (sarake1, sarake2) VALUES ('arvo1', 'arvo2')";
-  $sql2 = "UPDATE taulu2 SET sarake1 = 'uusi_arvo' WHERE ehto = 'jokin_ehto'";
+  $sql1 = "INSERT INTO artists (ArtistId, Name) VALUES ('278', 'pertti kurikan nimipäivät')";
+  $sql2 = "UPDATE genres SET GenreId = '?' WHERE ehto = 'metal'";
 
   mysqli_query($yhteys, $sql1);
   mysqli_query($yhteys, $sql2);
