@@ -5,12 +5,12 @@ $dbcon = createDbConnection();
 
 
 $alkukirjain = $_GET['alkukirjain'];
-$kaupunki = $_GET['kaupunki'];
+$country = $_GET['country'];
 
-$sql = "SELECT * FROM asiakkaat WHERE Nimi LIKE :alkukirjain AND Kaupunki = :kaupunki";
+$sql = "SELECT * FROM customers WHERE Name LIKE :alkukirjain AND country = :country";
 $stmt = $dbcon->prepare($sql);
 $stmt->bindValue(':alkukirjain', $alkukirjain . '%');
-$stmt->bindValue(':kaupunki', $kaupunki);
+$stmt->bindValue(':country', $country);
 $stmt->execute();
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
